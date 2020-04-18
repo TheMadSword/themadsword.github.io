@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="js/tax.js"> </script>
+    <style type="text/css">
+    th:not(.useless), td {
+       border: 1px grey solid;
+    }
+    td:not(:first-child) {
+      text-align: right;
+    }
+    th.useless {
+      border-top: 0px solid #FFFFFF;
+      border-left: 0px solid #FFFFFF;
+    }
+    table {
+      border-collapse: collapse;
+    }
+    td.row-title[title] {
+      text-decoration: underline;
+      text-decoration-style: dotted;
+    }
+    #treasury-level-warning {
+      font-size: 75%;
+      font-style: italic;
+    }
+    </style>
+  </head>
+
+  <body>
+    <h3>Heroes of Hammerwatch Tax Calculator</h3>
+    <p>
+      Based on <a href="https://tomylobo.github.io/hoh-taxcalc/tax.html">TomyLobo</a> /
+      <a href="http://missdev.nl/tax.html">Miss</a> tax calculators.
+    </p>
+
+    <p>
+      <label>Town money:<br>
+      <input type="number" min="0" id="town-money" value="0"/></label>
+    </p>
+
+    <p>
+      <label>Run money:<br>
+      <input type="number" min="0" max="999999999" id="run-money" value="1000" /></label>
+    </p>
+
+    <p>
+      <label>Treasury level:<br>
+      <input type="number" min="1" id="treasury-level" value="1" /><span id="treasury-level-warning">Note : as of b104, there are only 5 levels of treasury if playing with no mods</span></label><br>
+      <label><input type="checkbox" id="offshore-account"/>Offshore Account</label><br/>
+      <label><input type="checkbox" id="papers-of-nobility"/>Papers of Nobility</label>
+      <label><span id="papers-of-nobility-attuned"><input type="checkbox"/>Attuned</span></label>
+      <table>
+        <tr>
+          <th class="useless"></th>
+          <th>Dragon not killed</th>
+          <th>Dragon killed</th>
+        </tr>
+        <tr id="midpoint">
+          <td class="row-title" title="Point at which a packet of 250g will be taxed at 50%">Midpoint</td>
+          <td class="dragon-not-killed"></td>
+          <td class="dragon-killed"></td>
+        </tr>
+        <tr id="marginal-tax-percent">
+          <td class="row-title" title="Highest paid tax percent of a 250g packet">Marginal tax rate</td>
+          <td class="dragon-not-killed"></td>
+          <td class="dragon-killed"></td>
+        </tr>
+        <tr id="tax-amount">
+          <td class="row-title" title="Percent rounded down, like in-game">Tax amount</td>
+          <td class="dragon-not-killed"></td>
+          <td class="dragon-killed"></td>
+        </tr>
+        <tr id="received-amount">
+          <td class="row-title">You'll get</td>
+          <td class="dragon-not-killed"></td>
+          <td class="dragon-killed"></td>
+        </tr>
+        <tr id="total-amount">
+          <td class="row-title">Total of</td>
+          <td class="dragon-not-killed"></td>
+          <td class="dragon-killed"></td>
+        </tr>
+      </table>
+    </p>
+    <label>Killing dragon difference : <span id="dragon-difference"></span>
+  </body>
+</html>
