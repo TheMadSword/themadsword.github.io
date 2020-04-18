@@ -24,6 +24,9 @@
       font-size: 75%;
       font-style: italic;
     }
+    #source-code {
+      font-size: 75%;
+    }
     </style>
   </head>
 
@@ -46,7 +49,7 @@
 
     <p>
       <label>Treasury level:<br>
-      <input type="number" min="1" id="treasury-level" value="1" /><span id="treasury-level-warning">Note : as of b104, there are only 5 levels of treasury if playing with no mods</span></label><br>
+      <input type="number" min="1" id="treasury-level" value="1" /><span id="treasury-level-warning">Note : as of B104, there are only 5 levels of treasury if playing with no mods</span></label><br>
       <label><input type="checkbox" id="offshore-account"/>Offshore Account</label><br/>
       <label><input type="checkbox" id="papers-of-nobility"/>Papers of Nobility</label>
       <label><span id="papers-of-nobility-attuned"><input type="checkbox"/>Attuned</span></label>
@@ -84,5 +87,9 @@
       </table>
     </p>
     <label>Killing dragon difference : <span id="dragon-difference"></span>
+
+    <p id="source-code">
+        See <a href="https://github.com/TheMadSword/themadsword.github.io">here</a> for source code. Last update for B104.
+    </p>
   </body>
 </html>
