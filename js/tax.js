@@ -80,7 +80,7 @@ function calculateTax(townMoney, runMoney, midpoint) {
   while (runMoney > 0) {
     var tmp_money_for_tax = townMoney + money / 1000;
     marginalTaxPercent = currentTaxRate(tmp_money_for_tax, midpoint);
-    var tmp_add = Math.min(250, runMoney) * 1000 * marginalTaxPercent;
+    var tmp_add = parseInt(Math.min(250, runMoney) * 1000 * marginalTaxPercent);
     money += tmp_add;
     runMoney -= 250;
   }
