@@ -20,7 +20,7 @@
       text-decoration: underline;
       text-decoration-style: dotted;
     }
-    #treasury-level-warning {
+    #treasury-level-warning, .inform-shortcut  {
       font-size: 75%;
       font-style: italic;
     }
@@ -39,20 +39,35 @@
 
     <p>
       <label>Town money:<br>
-      <input type="number" min="0" id="town-money" value="0"/></label>
+        <input type="number" min="0" id="town-money" value="0"/>
+        <span class="inform-shortcut">Shortcut: T or W</span>
+      </label>
     </p>
 
     <p>
       <label>Run money:<br>
-      <input type="number" min="0" max="999999999" id="run-money" value="1000" /></label>
+        <input type="number" min="0" max="999999999" id="run-money" value="1000" />
+        <span class="inform-shortcut">Shortcut: R</span>
+      </label>
     </p>
 
     <p>
       <label>Treasury level:<br>
-      <input type="number" min="1" id="treasury-level" value="1" /><span id="treasury-level-warning">Note : as of B104, there are only 5 levels of treasury if playing with no mods</span></label><br>
-      <label><input type="checkbox" id="offshore-account"/>Offshore Account</label><br/>
-      <label><input type="checkbox" id="papers-of-nobility"/>Papers of Nobility</label>
-      <label><span id="papers-of-nobility-attuned"><input type="checkbox"/>Attuned</span></label>
+        <input type="number" min="1" id="treasury-level" value="1" />
+        <span id="treasury-level-warning">Note : as of B104, there are only 5 levels of treasury if playing with no mods</span>
+        <span class="inform-shortcut">Shortcut: Y</span>
+      </label><br>
+      <label>
+        <input type="checkbox" id="offshore-account"/>Offshore Account
+        <span class="inform-shortcut">Shortcut: O</span>
+      </label><br/>
+      <label>
+        <input type="checkbox" id="papers-of-nobility"/>Papers of Nobility
+        <span class="inform-shortcut">Shortcut: P</span>
+      </label>
+      <label>
+        <span id="papers-of-nobility-attuned"><input type="checkbox"/>Attuned <span class="inform-shortcut">Shortcuts: N</span></span>
+      </label>
       <table>
         <tr>
           <th class="useless"></th>

@@ -64,8 +64,8 @@ function calculateMidpoint() {
   if (document.querySelector("#papers-of-nobility").checked) {
     retval *= 1.25;
   };
-  if (document.querySelector("span#papers-of-nobility-attuned").getClientRects().length &&
-      document.querySelector("span#papers-of-nobility-attuned input").checked) {
+  if (document.querySelector("#papers-of-nobility-attuned").getClientRects().length &&
+      document.querySelector("#papers-of-nobility-attuned input").checked) {
     retval *= 1.25
   }
 
@@ -94,6 +94,7 @@ function calculateTax(townMoney, runMoney, midpoint) {
 document.addEventListener("DOMContentLoaded", function() {
 
   addChangeHooks();
+  registerKeyUps();
 
   refreshCalculus();
 });
@@ -114,7 +115,43 @@ function addChangeHooks() {
   document.querySelector("#papers-of-nobility").addEventListener("input", function (e) {
     refreshCalculus();
   });
-  document.querySelector("span#papers-of-nobility-attuned input").addEventListener("input", function (e) {
+  document.querySelector("#papers-of-nobility-attuned input").addEventListener("input", function (e) {
     refreshCalculus();
   });
+}
+
+function registerKeyUps() {
+  document.onkeyup = function(e) {
+    if (!e.altKey) {
+      return;
+    }
+    switch (e.which) {
+      case 'T'.charCodeAt(0):
+      case 'W'.charCodeAt(0):
+        document.querySelector("#town-money").focus();
+        break;
+      case 'R'.charCodeAt(0):
+        document.querySelector("#run-money").focus();
+        break;
+      case 'Y'.charCodeAt(0):
+        document.querySelector("#treasury-level").focus();
+        break;
+      case 'O'.charCodeAt(0):
+        toggleCheckbox(document.querySelector("#offshore-account"));
+        refreshCalculus();
+        break;
+      case 'P'.charCodeAt(0):
+        toggleCheckbox(document.querySelector("#papers-of-nobility"));
+        refreshCalculus();
+        break;
+      case 'N'.charCodeAt(0):
+        toggleCheckbox(document.querySelector("#papers-of-nobility-attuned input"));
+        refreshCalculus();
+        break;
+    }
+  };
+}
+
+function toggleCheckbox(checkbox) {
+  checkbox.checked = !checkbox.checked;
 }
