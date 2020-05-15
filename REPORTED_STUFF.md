@@ -1,6 +1,10 @@
 Workshop :
 - No Linux Support for HeroesWorkshop.exe & HWRToolkit.exe, so you need Windows to upload :'( 10/05/2020
-- res/EDITOR.ico when opening Editor binary 10/05/2020
+
+Editor :
+- res/EDITOR.ico when opening Editor binary 10/05/2020 & 15/05/2020
+- menus are semi-functional (transparent/invisible) 15/05/2020
+- I need to "kill -9" to close the editor 15/05/2020
 
 Feature requests :
 - Ability to remove individual track/plot (Discussed with K.)
