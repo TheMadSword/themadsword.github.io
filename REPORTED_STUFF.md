@@ -12,6 +12,7 @@ Feature requests :
 
 Bugs :
 - Possible to get stuck with pusher-beasts (act 6) 13/04/2020
+- Sometimes blue portal & buttons not clean in Archives (skin without functions)
 - Buying Plume may duplicate shop-items in the shop it is bought 03/04/2020
 - Mod clash (unpacked vs subscribed), you cannot enable only one of the two 13/05/2020
 - plot 0 anyvar crashes 10/05/2020
