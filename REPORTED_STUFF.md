@@ -25,3 +25,6 @@ Bugs :
 Text :
 - Incredible Strength incorrect tooltip being wrong, 200% vs 100% 03/05/2020
 - Inconsistent  "Gladiator locked" vs "Witch Hunter DLC needed" 04/04/2020
+
+Other :
+- Ridiculously hard to differentiate from floor wall in POP 15/05/2020
