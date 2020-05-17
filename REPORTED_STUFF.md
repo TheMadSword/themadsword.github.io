@@ -25,7 +25,7 @@ Bugs :
 Text :
 - Incredible Strength incorrect tooltip being wrong, 200% vs 100% 03/05/2020
 - Inconsistent  "Gladiator locked" vs "Witch Hunter DLC needed" 04/04/2020
-- Curse tooltip being wrong : Tomb vs Effect tab, last % (200+X vs 200+~X*5 ? or something like that).
+- Curse tooltip being wrong : Tomb vs Effect tab, last % (200+X vs 200+~X*5 ? or something like that). 16/05/2020
 
 Other :
 - Ridiculously hard to differentiate from floor wall in POP 15/05/2020
