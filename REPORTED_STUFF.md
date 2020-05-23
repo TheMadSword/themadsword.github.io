@@ -22,6 +22,7 @@ Bugs :
 - Menu armor calculation bug 06/05/2020
 - Game crashes in non Direct X option in Windows 16/05/2020
 - Teleporting when a ghost-wizard cast its icy meteor will trigger its spell when you are teleport 22/05/2020
+- (Thyraxx.void) Abundant Shop fountain items aren't affected by NG+, but updated after an item is bought (23/05/2020)
 
 Text :
 - Incredible Strength incorrect tooltip being wrong, 200% vs 100% 03/05/2020
