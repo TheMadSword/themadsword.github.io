@@ -22,30 +22,19 @@ function currentTaxRate(money, midpoint) {
 function caclulateAllTaxes() {
   var townMoney = parseInt(document.querySelector("#town-money").value);
   var runMoney = parseInt(document.querySelector("#run-money").value);
-  var midpoint = calculateMidpoint();
+  var midpointMultiplier = getMidpointMultiplier();
+  var midpoint = getTreasuryMidpoint() * midpointMultiplier;
   var tax;
   var received_money;
   var tax_money;
 
-  document.querySelector("#midpoint .dragon-not-killed").innerText = midpoint;
-  tax = calculateTax(townMoney, runMoney, midpoint);
-  document.querySelector("#marginal-tax-percent .dragon-not-killed").innerText = parseFloat(((1 - tax.marginal_tax_percent) * 100).toFixed(1)) + "%";
-  document.querySelector("#received-amount .dragon-not-killed").innerText = parseInt(tax.received_money);
-  tax_money = runMoney - parseInt(tax.received_money);
-  document.querySelector("#tax-amount .dragon-not-killed").innerText =
-    `${tax_money} (${parseInt(tax_money / runMoney * 100)}%)`;
-  document.querySelector("#total-amount .dragon-not-killed").innerText = townMoney + parseInt(tax.received_money);
+  document.querySelector("#midpoint_multiplier_pre_boss").innerText = midpointMultiplier;
+
+  setColumnValues(".dragon-not-killed", midpoint, townMoney, runMoney);
 
   midpoint *= 2;
 
-  document.querySelector("#midpoint .dragon-killed").innerText = midpoint;
-  tax = calculateTax(townMoney, runMoney, midpoint);
-  document.querySelector("#marginal-tax-percent .dragon-killed").innerText = parseFloat(((1 - tax.marginal_tax_percent) * 100).toFixed(1)) + "%";
-  document.querySelector("#received-amount .dragon-killed").innerText = parseInt(tax.received_money);
-  tax_money = runMoney - parseInt(tax.received_money);
-  document.querySelector("#tax-amount .dragon-killed").innerText =
-    `${tax_money} (${parseInt(tax_money / runMoney * 100)}%)`;
-  document.querySelector("#total-amount .dragon-killed").innerText = townMoney + parseInt(tax.received_money);
+  setColumnValues(".dragon-killed", midpoint, townMoney, runMoney);
 
   var difference_dragon = parseInt(document.querySelector("#total-amount .dragon-killed").innerText) -
     parseInt(document.querySelector("#total-amount .dragon-not-killed").innerText);
@@ -53,10 +42,25 @@ function caclulateAllTaxes() {
     `${difference_dragon} gold (+${(difference_dragon / parseInt(document.querySelector("#total-amount .dragon-killed").innerText) * 100).toFixed(1)}%)`;
 }
 
+function setColumnValues(colCSSClass, midpoint, townMoney, runMoney) {
+    document.querySelector("#midpoint " + colCSSClass).innerText = midpoint;
+    var tax = calculateTax(townMoney, runMoney, midpoint);
+    document.querySelector("#marginal-tax-percent " + colCSSClass).innerText = parseFloat(((1 - tax.marginal_tax_percent) * 100).toFixed(1)) + "%";
+    document.querySelector("#received-amount " + colCSSClass).innerText = parseInt(tax.received_money);
+    var tax_money = runMoney - parseInt(tax.received_money);
+    document.querySelector("#tax-amount " + colCSSClass).innerText =
+      `${tax_money} (${parseInt(tax_money / runMoney * 100)}%)`;
+    document.querySelector("#total-amount " + colCSSClass).innerText = townMoney + parseInt(tax.received_money);
+}
+
+function getTreasuryMidpoint() {
+  var treasuryLevel = parseInt(document.querySelector("#treasury-level").value);
+  return (treasuryLevel + 1) * 5000;
+}
+
 //Excludes dragon
-function calculateMidpoint() {
-  var retval = parseInt(document.querySelector("#treasury-level").value);
-  retval = (retval + 1) * 5000;
+function getMidpointMultiplier() {
+  var retval = 1.0;
 
   if (document.querySelector("#offshore-account").checked) {
     retval *= 4;
