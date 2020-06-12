@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="js/lightsout.js"></script>
+    <script src="js/lightsout_puzzle.js"></script>>
+    <script src="js/hohtools_shortcuts.js"></script>
+    <style type="text/css">
+    th:not(.useless), td {
+       border: 1px grey solid;
+    }
+    th.useless {
+      border-top: 0px solid #FFFFFF;
+      border-left: 0px solid #FFFFFF;
+    }
+    table {
+      border-collapse: collapse;
+    }
+    .row-title[title] {
+      text-decoration: underline;
+      text-decoration-style: dotted;
+    }
+    #source-code, #tip {
+      font-size: 75%;
+    }
+    .light {
+      font-weight: lighter;
+      font-style: italic;
+    }
+    .main-title {
+      display: inline;
+    }
+    p.main-title {
+      font-size: 85%;
+    }
+    #solution_info {
+      text-align: center;
+    }
+    input[type=checkbox]
+    {
+      /* Double-sized Checkboxes */
+      -ms-transform: scale(2); /* IE */
+      -moz-transform: scale(2); /* FF */
+      -webkit-transform: scale(2); /* Safari and Chrome */
+      -o-transform: scale(2); /* Opera */
+      transform: scale(2);
+      margin: 10px;
+    }
+    </style>
+  </head>
+
+  <body>
+    <h3 class="main-title">Heroes of Hammerwatch - Lights Out Solver</h3> <p class="main-title light">(See also : <a href="hohtools.html">More Tools</a> @ <span class="light">Double-Esc</span>)</p>
+
+    <p>
+      <label><input type="radio" id="s3" name="size" value="3" checked="checked">3x3</label>
+      <label><input type="radio" id="s5" name="size" value="5">5x5</label>
+      <button onclick="resetBoard();">Reset (Alt+R)</button>
+      <button onclick="randomBoard();">Random</button>
+    </p>
+
+    <table>
+      <tr>
+        <th>Puzzle</th>
+        <th>Solution</th>
+      </tr>
+      <tr>
+        <td><div id="board"></div></td>
+        <td><div id="board_solution"></div></td>
+      </tr>
+    </table>
+
+    <p id="tip">
+        You may want to use the <span class="light">Tab</span>, <span class="light">Space Bar/Enter</span> and <span class="light">Arrow</span>/<span class="light">WASD</span> keys to navigate and use this page.
+    </p>
+
+    <p id="source-code">
+        See <a href="https://github.com/TheMadSword/themadsword.github.io">here</a> for source code. Last update for B104.
+    </p>
+  </body>
+</html>

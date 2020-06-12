@@ -1,1 +1,1 @@
-See https://themadsword.github.io/hoh-taxcalc.html
+See https://themadsword.github.io/hohtools.html

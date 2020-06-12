@@ -1,6 +1,31 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="refresh" content="0; url=hoh-taxcalc.html" />
+      <script>
+      document.addEventListener('keyup', function(e) {
+        if (e.altKey || e.ctrlKey)
+          return;
+
+        if (isNaN(parseInt(e.key)))
+          return;
+
+        switch (parseInt(e.key)) {
+          case 1:
+            window.location.href = "hoh-taxcalc.html";
+            break;
+          case 2:
+            window.location.href = "hoh-lightsoutsolver.html";
+            break;
+        }
+      });
+      </script>
     </head>
+    <body>
+      <h1>Heroes of Hammerwatch Tools</h1>
+      <ol>
+        <li><h3><a href="hoh-taxcalc.html">Tax Calculator</a></h3></li>
+        <li><h3><a href="hoh-lightsoutsolver.html">Lights Out Solver</a></h3></li>
+      </ol>
+      <p>Shortcut: You can use the digit key of the tool you want on your keyboard.</p>
+    </body>
 </html>
