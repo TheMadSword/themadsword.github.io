@@ -33,3 +33,4 @@ Text :
 
 Other :
 - Ridiculously hard to differentiate from floor wall in POP 15/05/2020
+- Cedric bonus is hidden when looking at Resistance after picking up a Mana crystal (27/08/2019,05/04/2022)
