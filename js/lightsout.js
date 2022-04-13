@@ -58,7 +58,13 @@ function regenerateBoards(size, avoidHook=false) {
       chk.setAttribute('type', 'checkbox');
       chk.setAttribute('id', 's' + i + j);
       chk.setAttribute('class', 'solution_tile');
-      chk.setAttribute('disabled', 'true');
+      chk.setAttribute('tabindex', '-1');
+      chk.setAttribute('onclick', 'return false;');
+      if (!avoidHook) {
+        chk.addEventListener("input", function (e) {
+          evt.preventDefault();
+        });
+      }
       board_solution.appendChild(chk);
     }
 
